@@ -30,3 +30,10 @@
 *.exe
 *.out
 *.app
+
+# Python Build files
+dist/
+build
+
+# Python cache files
+__pycache__/
