@@ -1,8 +1,8 @@
 import time
 from datetime import date, datetime
-from internals.watchman.lib.Cache import CACHE_FILE, Cache
-from internals.watchman.src.remove_file import remove_file
-from internals.colormania.colormania import useColor
+from Sources.internals.watchman.lib.Cache import CACHE_FILE, Cache
+from Sources.internals.watchman.src.remove_file import remove_file
+from Sources.internals.colormania.colormania import useColor
 
 class FileWatcher:
     # Init cache class

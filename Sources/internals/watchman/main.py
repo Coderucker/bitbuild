@@ -1,2 +1,2 @@
-from internals.watchman.lib.FileWatcher import FileWatcher
-from internals.watchman.lib.DirectoryWatcher import DirectoryWatcher
+from Sources.internals.watchman.lib.FileWatcher import FileWatcher
+from Sources.internals.watchman.lib.DirectoryWatcher import DirectoryWatcher

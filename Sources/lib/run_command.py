@@ -1,5 +1,5 @@
 import subprocess
-from util import (
+from Sources.lib.parse_config import (
   parse_config as parse
   )
 

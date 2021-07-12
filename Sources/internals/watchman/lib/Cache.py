@@ -1,5 +1,3 @@
-import os
-
 CACHE_FILE = "cache.txt"
 
 def parse_cache(cache: str) -> list:

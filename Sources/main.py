@@ -1,6 +1,6 @@
-from lib.read_cache import read_cache
-from lib.ignore_git import ignore_git
-from internals.watchman.main import (DirectoryWatcher, FileWatcher)
+from Sources.lib.read_cache import read_cache
+from Sources.lib.ignore_git import ignore_git
+from Sources.internals.watchman.main import (DirectoryWatcher, FileWatcher)
 
 read_cache()
 

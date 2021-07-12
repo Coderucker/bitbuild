@@ -1,10 +1,10 @@
 import time
 from datetime import datetime
-from internals.watchman.lib.Cache import CACHE_FILE, Cache
-from internals.watchman.src.iterate import iterate
-from internals.watchman.src.list_dir import list_dir
-from internals.watchman.src.remove_file import remove_file
-from internals.colormania.colormania import useColor
+from Sources.internals.watchman.lib.Cache import CACHE_FILE, Cache
+from Sources.internals.watchman.src.iterate import iterate
+from Sources.internals.watchman.src.list_dir import list_dir
+from Sources.internals.watchman.src.remove_file import remove_file
+from Sources.internals.colormania.colormania import useColor
 
 class DirectoryWatcher:
     # Init cache class
