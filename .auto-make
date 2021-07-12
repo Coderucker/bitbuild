@@ -1,2 +1,0 @@
-script_main=python tests/test.py
-code=node -v
