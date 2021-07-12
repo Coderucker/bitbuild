@@ -1,15 +1,14 @@
-from os import TMP_MAX
 import subprocess
-import time
 from util import (
-  parse_config as parse, 
-  read_config as read
+  parse_config as parse
   )
 
 def run_command(command):
-  config = read.read_config(".auto-make")
+  config = open(".auto-make.json").read()
   parsed = parse.parse_config(config)
 
-  print(f"[{time.time()}] Running command {command} -> {parsed[command]}")
+  # Printing the status of the run
+  print(f"Running command {command} -> {parsed[command]}")
   output = subprocess.run(parsed[command].split(" "), capture_output=True)
+
   return output.stdout.decode("utf-8")
