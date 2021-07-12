@@ -1,3 +1,6 @@
-from util.run_command import run_command
+from internals.watchman.main import (DirectoryWatcher, FileWatcher)
 
-print(run_command('code'))
+#DirectoryWatcher("./internals").watch()
+
+
+FileWatcher(".replit").watch()

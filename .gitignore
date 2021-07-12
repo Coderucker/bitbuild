@@ -37,3 +37,6 @@ build
 
 # Python cache files
 __pycache__/
+
+# Notage files
+*.note
