@@ -25,13 +25,13 @@ class DirectoryWatcher:
                 if len(dir_content) != len(list_dir(self.directory)):
                     comparison = list_dir(self.directory)
                     print(f"""
-    [{current_time}]: New File or Folder Removed or Created!    
-    {iterate(comparison)}
+[{current_time}]: New File or Folder Removed or Created!    
+{iterate(comparison)}
                     """)
 
                     self.CACHE.generate_cache(f"""
-    [{datetime.now()}]: New File or Folder Removed or Created!    
-    {iterate(comparison)}
+[{datetime.now()}]: New File or Folder Removed or Created!    
+{iterate(comparison)}
                     """)
             except KeyboardInterrupt:
                 # Cleaning the cache file

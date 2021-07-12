@@ -40,3 +40,6 @@ __pycache__/
 
 # Notage files
 *.note
+
+# Cache File by auto-make 
+*.cache.txt
