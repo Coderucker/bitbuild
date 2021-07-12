@@ -1,0 +1,5 @@
+EVENT_TYPE = [
+    "ON_CREATED",
+    "ON_DELETED",
+    "ON_MODIFIED"
+]
