@@ -4,6 +4,7 @@ from internals.watchman.lib.Cache import CACHE_FILE, Cache
 from internals.watchman.src.iterate import iterate
 from internals.watchman.src.list_dir import list_dir
 from internals.watchman.src.remove_file import remove_file
+from internals.colormania.colormania import useColor
 
 class DirectoryWatcher:
     # Init cache class
@@ -12,7 +13,9 @@ class DirectoryWatcher:
         self.directory = directory
 
     def watch(self):
-        print(f"[{datetime.now()}]: Watching out for changes in folder -> {self.directory}")
+        current_time = useColor(datetime.now(), "135", "73", "23")
+
+        print(f"[{current_time}]: Watching out for changes in folder -> {self.directory}")
         while(True):
             try:
                 dir_content = list_dir(self.directory)
@@ -22,7 +25,7 @@ class DirectoryWatcher:
                 if len(dir_content) != len(list_dir(self.directory)):
                     comparison = list_dir(self.directory)
                     print(f"""
-    [{datetime.now()}]: New File or Folder Removed or Created!    
+    [{current_time}]: New File or Folder Removed or Created!    
     {iterate(comparison)}
                     """)
 

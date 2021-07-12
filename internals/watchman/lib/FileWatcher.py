@@ -1,9 +1,8 @@
-from internals.watchman.src.remove_file import remove_file
-import os
 import time
-from datetime import datetime
+from datetime import date, datetime
 from internals.watchman.lib.Cache import CACHE_FILE, Cache
-
+from internals.watchman.src.remove_file import remove_file
+from internals.colormania.colormania import useColor
 
 class FileWatcher:
     # Init cache class
@@ -12,7 +11,9 @@ class FileWatcher:
         self.file = file
     
     def watch(self):
-        print(f"[{datetime.now()}] Watching out for changes in file -> {self.file}")
+        current_time = useColor(datetime.now(), "135", "73", "23")
+
+        print(f"[{current_time}] Watching out for changes in file -> {self.file}")
         while(True):
             try:
                 f = open(self.file).read()
@@ -21,7 +22,7 @@ class FileWatcher:
 
                 if open(self.file).read() != f:
                     # Printing the change
-                    print(f"[{datetime.now()}]: {self.file} -> File has Changes") 
+                    print(f"[{current_time}]: {self.file} -> File has Changes") 
                     
                     # Creating cache file
                     self.CACHE.generate_cache(f"[{datetime.now()}]: {self.file} -> File has Changes \n")
