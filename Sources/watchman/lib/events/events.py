@@ -10,8 +10,8 @@ EVENT_TYPE = [
 
 
 class Events_File(Event):
-    def __init__(self, file) -> None:
-        self.file = file
+    def __init__(self) -> None:
+        pass
     
     @staticmethod
     def on_created(self, callback: Callable):
