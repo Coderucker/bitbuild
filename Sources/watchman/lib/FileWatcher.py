@@ -1,12 +1,9 @@
 import time
 from datetime import datetime
-from typing import Callable
 from Sources.watchman.lib.events.events import Events_File
 from Sources.watchman.src.remove_file import remove_file
 from Sources.colormania.colormania import useColor
 
-def log():
-    print("Log")
 
 class FileWatcher(Events_File):
     def __init__(self, file, modified_func) -> None:
@@ -27,9 +24,6 @@ class FileWatcher(Events_File):
                 if open(self.file).read() != f:
                     # Printing the change
                     print(f"[{current_time}]: {self.file} -> File has Changes") 
-                    
-                    # Creating cache file
-                    self.CACHE.generate_cache(f"[{datetime.now()}]: {self.file} -> File has Changes \n")
 
                     # Checking if modified func was defined
                     self.modified_func()

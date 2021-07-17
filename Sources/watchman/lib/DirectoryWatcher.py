@@ -25,11 +25,6 @@ class DirectoryWatcher:
 [{current_time}]: New File or Folder Removed or Created!    
 {iterate(comparison)}
                     """)
-
-                    self.CACHE.generate_cache(f"""
-[{datetime.now()}]: New File or Folder Removed or Created!    
-{iterate(comparison)}
-                    """)
             except KeyboardInterrupt:
                 exit()
             except FileNotFoundError:
