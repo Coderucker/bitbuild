@@ -1,8 +1,9 @@
 import time
 from datetime import datetime
+
+from Sources.colormania.colormania import useColor
 from Sources.watchman.lib.events.events import Events_File
 from Sources.watchman.src.remove_file import remove_file
-from Sources.colormania.colormania import useColor
 
 
 class FileWatcher(Events_File):

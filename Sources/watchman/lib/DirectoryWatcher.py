@@ -1,9 +1,11 @@
 import time
 from datetime import datetime
+
+from Sources.colormania.colormania import useColor
 from Sources.watchman.src.iterate import iterate
 from Sources.watchman.src.list_dir import list_dir
 from Sources.watchman.src.remove_file import remove_file
-from Sources.colormania.colormania import useColor
+
 
 class DirectoryWatcher:
     def __init__(self, directory) -> None:
