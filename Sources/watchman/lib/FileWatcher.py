@@ -3,7 +3,6 @@ from datetime import datetime
 
 from Sources.colormania.colormania import useColor
 from Sources.watchman.lib.events.events import Events_File
-from Sources.watchman.src.remove_file import remove_file
 
 
 class FileWatcher(Events_File):
@@ -12,16 +11,24 @@ class FileWatcher(Events_File):
         self.config = config
 
     def watch(self):
-        current_time = useColor(datetime.now(), "135", "73", "23")
+        red = "135"
+        green = "73"
+        blue = "23"
 
         # Out of the while loop to prevent printing on this message
-        print(f"[{current_time}] Watching out for changes in file -> {self.config[0]}")
+        print(f"[{useColor(datetime.now(), red, green, blue)}] Watching out for changes in file -> {self.config[0]}")
 
         while True:
+            started = False
+            current_time = useColor(datetime.now(), red, green, blue)
+
             try:
                 f = open(self.config[0]).read()
 
-                time.sleep(0)
+                time.sleep(0.35)
+
+                # Set it has started the program
+                started = True
 
                 if open(self.config[0]).read() != f:
                     # Printing the change
@@ -35,9 +42,16 @@ class FileWatcher(Events_File):
             except KeyboardInterrupt:
                 exit()
             except FileNotFoundError:
-                print(f"[{current_time}]: File was not found -> {self.config[0]}")
+                if not started:
+                    print(f"[{current_time}]: File was not found -> {self.config[0]}")
+                else:
+                    print(f"[{current_time}]: File was deleted -> {self.config[0]}")
                 print("Process exited with code 1")
                 break
-
+            except UnicodeDecodeError:
+                print(f"Failed to decode file {self.config[0]}")
+                break
+                break
             except:
                 continue
+
