@@ -1,6 +1,9 @@
 # Prerequisites
 *.d
 
+# Venv Script file
+/Script/**
+
 # Compiled Object files
 *.slo
 *.lo
