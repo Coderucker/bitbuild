@@ -1,3 +1,12 @@
 from Sources.main import FileWatcher
 
-FileWatcher("test.txt").watch()
+def lof():
+    exec("""
+import sys 
+
+print(f"Python version: {sys.version}")
+""")
+
+watcher = FileWatcher("test.txt", lof)
+
+watcher.watch()
