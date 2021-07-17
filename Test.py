@@ -1,3 +1,4 @@
+from Sources.watchman.lib.FileWatcher import FileWatcher
 from main import FileWatcher
 
 def lof():
@@ -16,7 +17,7 @@ print(sys.path)
 
 
 watcher = FileWatcher([
-    "README.md",
+    "./a.txt",
     lof
 ])
 
