@@ -1,6 +1,6 @@
 from Sources.lib.read_cache import read_cache
 from Sources.lib.ignore_git import ignore_git
-from Sources.internals.watchman.main import (DirectoryWatcher, FileWatcher)
+from Sources.watchman.main import (DirectoryWatcher, FileWatcher)
 
 read_cache()
 
@@ -11,4 +11,5 @@ def main():
     DirectoryWatcher("./").watch()
 
 
-main()
+if __name__ == "__main__":
+    main()
