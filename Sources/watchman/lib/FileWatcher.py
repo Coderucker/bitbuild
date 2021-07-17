@@ -1,14 +1,18 @@
 import time
-from datetime import date, datetime
-from Sources.watchman.lib.Cache import CACHE_FILE, Cache
+from datetime import datetime
+from typing import Callable
+from Sources.watchman.lib.events.events import Events_File
 from Sources.watchman.src.remove_file import remove_file
 from Sources.colormania.colormania import useColor
 
-class FileWatcher:
-    # Init cache class
-    CACHE = Cache()
-    def __init__(self, file) -> None:
+def log():
+    print("Log")
+
+class FileWatcher(Events_File):
+    def __init__(self, file, modified_func) -> None:
+        super().__init__(file)
         self.file = file
+        self.modified_func = modified_func
     
     def watch(self):
         current_time = useColor(datetime.now(), "135", "73", "23")
@@ -26,25 +30,16 @@ class FileWatcher:
                     
                     # Creating cache file
                     self.CACHE.generate_cache(f"[{datetime.now()}]: {self.file} -> File has Changes \n")
+
+                    # Checking if modified func was defined
+                    self.modified_func()
             except KeyboardInterrupt:
-                # Cleaning the log file
-                self.CACHE.clean_cache()
-                remove_file(CACHE_FILE)
 
                 exit()
             except FileNotFoundError:
-                # Cleaning the log file
-                self.CACHE.clean_cache()
-                remove_file(CACHE_FILE)
-                
-                print(f"No file named: {self.file}")
+                print(f"[{current_time}]: File was not found -> {self.file}")
+                print("Process exited with code 1")
                 break
-            except: 
-                # Cleaning the log file
-                self.CACHE.clean_cache()
-                remove_file(CACHE_FILE)
-                    
-                continue
 
-    def get_cache_data(self):
-        return self.CACHE.get_cache_data()
+            except: 
+                continue

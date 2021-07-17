@@ -1,14 +1,11 @@
 import time
 from datetime import datetime
-from Sources.watchman.lib.Cache import CACHE_FILE, Cache
 from Sources.watchman.src.iterate import iterate
 from Sources.watchman.src.list_dir import list_dir
 from Sources.watchman.src.remove_file import remove_file
 from Sources.colormania.colormania import useColor
 
 class DirectoryWatcher:
-    # Init cache class
-    CACHE = Cache()
     def __init__(self, directory) -> None:
         self.directory = directory
 
@@ -34,20 +31,8 @@ class DirectoryWatcher:
 {iterate(comparison)}
                     """)
             except KeyboardInterrupt:
-                # Cleaning the cache file
-                self.CACHE.clean_cache()
-                remove_file(CACHE_FILE)
-    
                 exit()
             except FileNotFoundError:
-                # Cleaning the cache file
-                self.CACHE.clean_cache()
-                remove_file(CACHE_FILE)
-
-                print(f"No file named: {self.file}")
+                print(f"No file was found named: {self.file}")
             except:
-                # Cleaning the cache file
-                self.CACHE.clean_cache()
-                remove_file(CACHE_FILE)
-
                 continue
