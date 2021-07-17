@@ -1,8 +1,0 @@
-{
-    "targets": [
-        {
-            "file": "main.py",
-            "action": ""
-        }
-    ]
-}

@@ -7,34 +7,37 @@ from Sources.watchman.src.remove_file import remove_file
 
 
 class FileWatcher(Events_File):
-    def __init__(self, file, modified_func) -> None:
-        super().__init__(file)
-        self.file = file
-        self.modified_func = modified_func
-    
+    def __init__(self, config) -> None:
+        super().__init__()
+        self.config = config
+
     def watch(self):
         current_time = useColor(datetime.now(), "135", "73", "23")
 
-        print(f"[{current_time}] Watching out for changes in file -> {self.file}")
-        while(True):
+        # Out of the while loop to prevent printing on this message
+        print(f"[{current_time}] Watching out for changes in file -> {self.config[0]}")
+
+        while True:
             try:
-                f = open(self.file).read()
+                f = open(self.config[0]).read()
 
-                time.sleep(0.35)
+                time.sleep(0)
 
-                if open(self.file).read() != f:
+                if open(self.config[0]).read() != f:
                     # Printing the change
-                    print(f"[{current_time}]: {self.file} -> File has Changes") 
+                    print(f"[{current_time}]: {self.config[0]} -> File has Changes")
 
-                    # Checking if modified func was defined
-                    self.modified_func()
+                    # calling action func
+                    if not type(self.config[1]) == str:
+                        self.config[1]()
+                    else:
+                        exec(self.config[1])
             except KeyboardInterrupt:
-
                 exit()
             except FileNotFoundError:
-                print(f"[{current_time}]: File was not found -> {self.file}")
+                print(f"[{current_time}]: File was not found -> {self.config[0]}")
                 print("Process exited with code 1")
                 break
 
-            except: 
+            except:
                 continue
