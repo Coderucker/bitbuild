@@ -18,6 +18,6 @@ def ignore_git():
         if not already_ignored():
             f = open(".gitignore", "a")
 
-            f.write("\n\n# Cache File by auto-make \n*.cache.txt")
+            f.write("\n\n# Cache File by amberbuild \n*.cache.txt")
 
 ignore_git()

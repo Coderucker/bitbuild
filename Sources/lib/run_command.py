@@ -4,7 +4,7 @@ from Sources.lib.parse_config import (
   )
 
 def run_command(command):
-  config = open(".auto-make.json").read()
+  config = open(".amberbuild.json").read()
   parsed = parse.parse_config(config)
 
   # Printing the status of the run

@@ -1,2 +1,2 @@
-# auto-make
+# amberbuild
 Build and Execute your code Automatically

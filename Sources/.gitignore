@@ -41,5 +41,5 @@ __pycache__/
 # Notage files
 *.note
 
-# Cache File by auto-make 
+# Cache File by amberbuild 
 *.cache.txt
