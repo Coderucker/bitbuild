@@ -1,13 +1,5 @@
-from Sources.main import FileWatcher
+"""
+This is a module which is used for exporting internal API's
+"""
 
-def lof():
-    exec("""
-import sys 
-
-print(f"Python version: {sys.version}")
-""")
-
-
-watcher = FileWatcher("test.txt", lof)
-
-watcher.watch()
+from Sources.main import (DirectoryWatcher, FileWatcher)
