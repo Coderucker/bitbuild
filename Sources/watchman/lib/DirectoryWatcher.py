@@ -4,7 +4,7 @@ from Sources.watchman.lib.Cache import CACHE_FILE, Cache
 from Sources.watchman.src.iterate import iterate
 from Sources.watchman.src.list_dir import list_dir
 from Sources.watchman.src.remove_file import remove_file
-from Sources.lib.colormania.colormania import useColor
+from Sources.colormania.colormania import useColor
 
 class DirectoryWatcher:
     # Init cache class

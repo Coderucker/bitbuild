@@ -2,7 +2,7 @@ import time
 from datetime import date, datetime
 from Sources.watchman.lib.Cache import CACHE_FILE, Cache
 from Sources.watchman.src.remove_file import remove_file
-from Sources.lib.colormania.colormania import useColor
+from Sources.colormania.colormania import useColor
 
 class FileWatcher:
     # Init cache class
