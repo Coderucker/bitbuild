@@ -46,3 +46,6 @@ __pycache__/
 
 # Cache File by amberbuild 
 *.cache.txt
+
+# Current task
+current_task
