@@ -1,5 +1,5 @@
-import os
 from typing import Callable
+
 from Sources.watchman.lib.events.event import Event
 
 EVENT_TYPE = [
@@ -11,7 +11,7 @@ EVENT_TYPE = [
 
 class Events_File(Event):
     def __init__(self) -> None:
-        pass
+        super().__init__()
     
     @staticmethod
     def on_created(self, callback: Callable):

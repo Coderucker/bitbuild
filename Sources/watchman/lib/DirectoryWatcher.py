@@ -5,7 +5,6 @@ from Sources.colormania.colormania import useColor
 from Sources.watchman.src.iterate import iterate
 from Sources.watchman.src.list_dir import list_dir
 
-
 class DirectoryWatcher:
     def __init__(self, directory) -> None:
         self.directory = directory

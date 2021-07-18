@@ -1,3 +1,4 @@
+import os
 import time
 from datetime import datetime
 
@@ -6,7 +7,7 @@ from Sources.watchman.lib.events.events import Events_File
 
 
 class FileWatcher(Events_File):
-    def __init__(self, config) -> None:
+    def __init__(self, config: list[str, str, str]) -> None:
         super().__init__()
         self.config = config
 
@@ -17,7 +18,6 @@ class FileWatcher(Events_File):
 
         # Out of the while loop to prevent printing on this message
         print(f"[{useColor(datetime.now(), red, green, blue)}] Watching out for changes in file -> {self.config[0]}")
-
         while True:
             started = False
             current_time = useColor(datetime.now(), red, green, blue)
@@ -27,7 +27,6 @@ class FileWatcher(Events_File):
 
                 time.sleep(0.35)
 
-                # Set it has started the program
                 started = True
 
                 if open(self.config[0]).read() != f:
@@ -42,16 +41,21 @@ class FileWatcher(Events_File):
             except KeyboardInterrupt:
                 exit()
             except FileNotFoundError:
-                if not started:
-                    print(f"[{current_time}]: File was not found -> {self.config[0]}")
-                else:
+                if started:
                     print(f"[{current_time}]: File was deleted -> {self.config[0]}")
-                print("Process exited with code 1")
-                break
+                else:
+                    print(f"[{current_time}]: File was bit found -> {self.config[0]}")
+                    print(f"Process Exited with code 1")
+                    break
+
+                # Initializing on_delete_task
+                self.config[2]()
             except UnicodeDecodeError:
-                print(f"Failed to decode file {self.config[0]}")
-                break
-                break
+                    print(f"Failed to decode file {self.config[0]}")
+                    break
             except:
                 continue
-
+        
+        # Implement delete event here
+        if not os.path.exists(self.config[0]):
+            print("File does Not exists")
