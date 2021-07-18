@@ -1,4 +1,4 @@
-class Detector:
+class CalcChange:
     def __init__(self, before_list, after_list) -> None:
         self.before_list = before_list
         self.after_list = after_list
