@@ -43,13 +43,11 @@ class FileWatcher(Events_File):
             except FileNotFoundError:
                 if started:
                     print(f"[{current_time}]: File was deleted -> {self.config[0]}")
+                    break
                 else:
-                    print(f"[{current_time}]: File was bit found -> {self.config[0]}")
+                    print(f"[{current_time}]: File was not found -> {self.config[0]}")
                     print(f"Process Exited with code 1")
                     break
-
-                # Initializing on_delete_task
-                self.config[2]()
             except UnicodeDecodeError:
                     print(f"Failed to decode file {self.config[0]}")
                     break
@@ -58,4 +56,8 @@ class FileWatcher(Events_File):
         
         # Implement delete event here
         if not os.path.exists(self.config[0]):
-            print("File does Not exists")
+            try:
+                self.config[2]()
+            except:
+                # Pass if no delete event
+                pass
