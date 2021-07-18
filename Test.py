@@ -1,4 +1,5 @@
 from Sources.watchman.lib.FileWatcher import FileWatcher
+
 from main import FileWatcher
 
 def lof():
@@ -10,15 +11,14 @@ print(f"Python version: {sys.version}")
 
 def lod():
     exec("""
-import sys
-
-print(sys.path)
+print("Hello")
 """)
 
 
 watcher = FileWatcher([
     "./a.txt",
-    lof
+    lof,
+    lod
 ])
 
 watcher.watch()
