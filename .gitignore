@@ -49,3 +49,6 @@ __pycache__/
 
 # Current task
 current_task
+
+# Share files
+/share

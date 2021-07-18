@@ -1,6 +1,5 @@
-from Sources.watchman.lib.FileWatcher import FileWatcher
-
-from main import FileWatcher
+from Sources.watchman.lib.DirectoryWatcher import DirectoryWatcher
+from main import DirectoryWatcher
 
 def lof():
     exec("""
@@ -15,10 +14,9 @@ print("Hello")
 """)
 
 
-watcher = FileWatcher([
-    "./a.txt",
-    lof,
-    lod
+watcher = DirectoryWatcher([
+    "./",
+    lof
 ])
 
 watcher.watch()
