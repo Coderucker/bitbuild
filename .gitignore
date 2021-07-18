@@ -2,7 +2,7 @@
 *.d
 
 # Venv Script file
-/Script/**
+/Scripts
 
 # Compiled Object files
 *.slo
