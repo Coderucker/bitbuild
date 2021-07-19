@@ -1,21 +1,25 @@
-from main import DirectoryWatcher
+from main import FileWatcher
 
-def lof():
+def dele():
     exec("""
-import sys 
-
-print(f"Python version: {sys.version}")
+print("Deleted")
 """)
 
-def lod():
+def adde():
     exec("""
-print("Hello")
+print("Added")
 """)
 
+def mode():
+    exec("""
+print("Modified")
+    """)
 
-watcher = DirectoryWatcher([
-    "./",
-    lof
+
+watcher = FileWatcher([
+    "./current_task",
+    adde,
+    dele
 ])
 
 watcher.watch()
