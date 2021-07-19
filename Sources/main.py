@@ -1,8 +1,2 @@
-from Sources.watchman.main import (DirectoryWatcher, FileWatcher)
-
-def main():
-    DirectoryWatcher("./").watch()
-
-
-if __name__ == "__main__":
-    main()
+from Sources.lib.DirectoryWatcher import DirectoryWatcher
+from Sources.lib.FileWatcher import FileWatcher

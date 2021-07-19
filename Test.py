@@ -1,4 +1,3 @@
-from Sources.watchman.lib.DirectoryWatcher import DirectoryWatcher
 from main import DirectoryWatcher
 
 def lof():
