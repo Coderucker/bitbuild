@@ -1,2 +1,2 @@
-from Sources.lib.DirectoryWatcher import DirectoryWatcher
-from Sources.lib.FileWatcher import FileWatcher
+from Sources.lib.observers.DirectoryWatcher import DirectoryWatcher
+from Sources.lib.observers.FileWatcher import FileWatcher

@@ -1,4 +1,4 @@
-from main import FileWatcher
+from main import DirectoryWatcher
 
 def dele():
     exec("""
@@ -16,10 +16,11 @@ print("Modified")
     """)
 
 
-watcher = FileWatcher([
-    "./current_task",
+watcher = DirectoryWatcher([
+    "./",
     adde,
-    dele
+    dele,
+    mode
 ])
 
-watcher.watch()
+watcher.watch(2)
