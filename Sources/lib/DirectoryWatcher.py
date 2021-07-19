@@ -8,23 +8,32 @@ from Sources.src.list_dir import list_dir
 class DirectoryWatcher:
     def __init__(self, config: list[str, str]) -> None:
         self.config = config[0]
-        self.on_modified = config[1]
+        self.on_created = config[1]
+        self.on_deleted = config[2]
 
     def watch(self):
-        current_time = useColor(datetime.now(), "255", "255", "200")
+        red = "255"
+        green = "255"
+        blue = "200"
 
-        print(f"[{current_time}]: Watching out for changes in folder -> {self.config}")
+        print(f"[{useColor(datetime.now(), red, green, blue)}]: Watching out for changes in folder -> {self.config}")
         while(True):
+            current_time = useColor(datetime.now(), red, green, blue)
             try:
                 dir_content = list_dir(self.config[0])
 
                 time.sleep(0.35)
 
-                if len(dir_content) != len(list_dir(self.config[0])):
-                    print(f"""[{current_time}]: New File or Folder Removed or Created! """)
+                if len(dir_content) < len(list_dir(self.config[0])):
+                    print(f"""[{current_time}]: New File Created!""")
 
-                    # Call on_modified event
-                    self.on_modified()
+                    # Call on_created event
+                    self.on_created()
+                elif len(dir_content) > len(list_dir(self.config[0])):
+                    print(f"""[{current_time}]: One File has been Removed!""")
+
+                    # Call on_created event
+                    self.on_deleted()
             except KeyboardInterrupt:
                 exit()
             except FileNotFoundError:

@@ -5,7 +5,6 @@ from datetime import datetime
 from Sources.colormania.colormania import useColor
 from Sources.lib.events.events import Events_File
 
-
 class FileWatcher(Events_File):
     def __init__(self, config: list[str, str, str]) -> None:
         super().__init__()
