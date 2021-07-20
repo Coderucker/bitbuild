@@ -2,6 +2,7 @@ import os
 import time
 from datetime import datetime
 from typing import Union
+from subprocess import check_output
 
 from Sources.colormania.colormania import useColor
 from Sources.lib.events.events import Events_File
@@ -9,7 +10,9 @@ from Sources.lib.events.events import Events_File
 class FileWatcher(Events_File):
     def __init__(self, config: list[str, str, str]) -> None:
         super().__init__()
-        self.config = config
+        self.config = config[0]
+        self.on_modified = config[1]
+        self.on_deleted = config[2]
 
     def watch(self, condition: Union[bool, int, None]):
         exit_code = 0
@@ -24,35 +27,35 @@ class FileWatcher(Events_File):
                     current_time = useColor(datetime.now(), red, green, blue)
 
                     try:
-                        f = open(self.config[0]).read()
+                        f = open(self.config).read()
 
                         time.sleep(0.35)
 
                         started = True
 
-                        if open(self.config[0]).read() != f:
+                        if open(self.config).read() != f:
                             # Printing the change
-                            print(f"[{current_time}]: {self.config[0]} -> File has Changes")
+                            print(f"[{current_time}]: {self.config} -> File has Changes")
 
                             # calling action func
-                            if not type(self.config[1]) == str:
-                                self.config[1]()
+                            if type(self.on_modified) == str:
+                                print(check_output(self.on_modified.split(" ")).decode("utf-8"))
                             else:
-                                exec(self.config[1])
+                                self.on_modified()
                     except KeyboardInterrupt:
                         exit_code = 0
                         exit()
                     except FileNotFoundError:
                         if started:
-                            print(f"[{current_time}]: File was deleted -> {self.config[0]}")
+                            print(f"[{current_time}]: File was deleted -> {self.config}")
                             exit_code = 0
                             break
                         else:
-                            print(f"[{current_time}]: File was not found -> {self.config[0]}")
+                            print(f"[{current_time}]: File was not found -> {self.config}")
                             print(f"Process exited with code 1")
                             break
                     except UnicodeDecodeError:
-                            print(f"Failed to decode file {self.config[0]}")
+                            print(f"Failed to decode file {self.config}")
                             exit_code = 1
                             break
                     except:
@@ -65,54 +68,52 @@ class FileWatcher(Events_File):
                     current_time = useColor(datetime.now(), red, green, blue)
 
                     try:
-                        f = open(self.config[0]).read()
+                        f = open(self.config).read()
 
                         time.sleep(0.35)
 
                         started = True
 
-                        if open(self.config[0]).read() != f:
+                        if open(self.config).read() != f:
                             # Printing the change
-                            print(f"[{current_time}]: {self.config[0]} -> File has Changes")
+                            print(f"[{current_time}]: {self.config} -> File has Changes")
 
                             # calling action func
-                            if not type(self.config[1]) == str:
-                                self.config[1]()
+                            if type(self.on_modified) == str:
+                                print(check_output(self.on_modified.split(" ")).decode("utf-8"))
                             else:
-                                exec(self.config[1])
+                                self.on_modified()
 
                             # Increment _condition
                             _condition += 1
-
-                            print(_condition)
                     except KeyboardInterrupt:
                         exit_code = 0
                         exit()
                     except FileNotFoundError:
                         if started:
-                            print(f"[{current_time}]: File was deleted -> {self.config[0]}")
+                            print(f"[{current_time}]: File was deleted -> {self.config}")
                             exit_code = 0
                             break
                         else:
-                            print(f"[{current_time}]: File was not found -> {self.config[0]}")
+                            print(f"[{current_time}]: File was not found -> {self.config}")
                             print(f"Process exited with code 1")
                             break
                     except UnicodeDecodeError:
-                            print(f"Failed to decode file {self.config[0]}")
+                            print(f"Failed to decode file {self.config}")
                             exit_code = 1
                             break
                     except:
                         continue
 
         # Out of the while loop to prevent printing on this message
-        print(f"[{useColor(datetime.now(), red, green, blue)}] Watching out for changes in file -> {self.config[0]}")
+        print(f"[{useColor(datetime.now(), red, green, blue)}] Watching out for changes in file -> {self.config}")
         # Start Watching
         _watch()
         
         # Implement delete event here
-        if not os.path.exists(self.config[0]):
+        if not os.path.exists(self.config):
             try:
-                self.config[2]()
+                self.on_deleted()
             except:
                 # Pass if no delete event
                 pass
