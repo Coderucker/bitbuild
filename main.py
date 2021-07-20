@@ -14,11 +14,19 @@ def main():
         watcher = FileWatcher([config_file, config_on_change_command, config_on_delete_command])
 
         try:
-            RUN_COUNT = sys.argv.index("--count") + 1
+            RUN_COUNT = 0
+            for i in range(0, len(sys.argv)):
+                if sys.argv[i] == "--count" or sys.argv[i] == "-c":
+                    RUN_COUNT = sys.argv[i + 1]
 
             watcher.watch(RUN_COUNT)
 
         except ValueError:
             watcher.watch(True)
+    elif config_type == "dir":
+        watcher = DirectoryWatcher(config=[config_file, config_on_change_command, config_on_delete_command])
 
-main()
+        watcher.watch(condition=True)
+
+if __name__ == "__main__":
+    main()

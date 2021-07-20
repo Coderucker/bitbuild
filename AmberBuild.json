@@ -1,0 +1,8 @@
+{
+    "type": "dir",
+    "targets": [
+        ".",
+        "$python --version",
+        "print('deleted')"
+    ]
+}

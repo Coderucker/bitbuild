@@ -11,6 +11,22 @@ def read_config():
         search_result = search_path.glob(ext)
 
         for res in search_result:
-            parsed = parse_config(open(res).read())
+            try:
+                parsed = parse_config(open(res).read())
 
-            return parsed
+                return parsed
+            except FileNotFoundError:
+                print("No config file found")
+
+                print("Falling back to default settings")
+                print("Watcher Type -> file")
+                print("Watcher Target -> main.py")
+
+                # Returning to default config
+                return {
+                    "type": "file",
+                    "targets": [
+                        "main.py",
+                        "python main.py"
+                    ]
+                }

@@ -19,8 +19,7 @@ print("Modified")
 watcher = DirectoryWatcher([
     "./",
     adde,
-    dele,
-    mode
+    "python --version"
 ])
 
-watcher.watch(2)
+watcher.watch(True)
