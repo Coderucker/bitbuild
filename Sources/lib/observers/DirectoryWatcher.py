@@ -1,6 +1,7 @@
 import time
 from datetime import datetime
 from typing import Union
+from subprocess import check_output
 
 from Sources.colormania.colormania import useColor
 from Sources.src.iterate import iterate
@@ -11,7 +12,6 @@ class DirectoryWatcher:
         self.config = config[0]
         self.on_created = config[1]
         self.on_deleted = config[2]
-        self.on_modified = config[3]
 
     def watch(self, condition: Union[bool, int]):
         red = "255"
@@ -24,24 +24,32 @@ class DirectoryWatcher:
             while condition or True:
                 current_time = useColor(datetime.now(), red, green, blue)
                 try:
-                    dir_content = list_dir(self.config[0])
+                    dir_content = list_dir(self.config)
 
                     time.sleep(0.35)
 
-                    if len(dir_content) < len(list_dir(self.config[0])):
+                    if len(dir_content) < len(list_dir(self.config)):
                         print(f"""[{current_time}]: New File Created!""")
 
                         # Call on_created event
-                        self.on_created()
-                    elif len(dir_content) > len(list_dir(self.config[0])):
+                        if type(self.on_created) == str:
+                            print(check_output(self.on_created.split(" ")).decode("utf-8"))
+                        else:
+                            self.on_created()
+
+                    elif len(dir_content) > len(list_dir(self.config)):
                         print(f"""[{current_time}]: One File has been Removed!""")
 
                         # Call deleted event
-                        self.on_deleted()
+                        if type(self.on_created) == str:
+                            print(check_output(self.on_deleted.split(" ")).decode("utf-8"))
+                        else:
+                            self.on_deleted()
+
                 except KeyboardInterrupt:
                     exit()
                 except FileNotFoundError:
-                    print(f"No file was found named: {self.config[0]}")
+                    print(f"No file was found named: {self.config}")
                 except:
                     pass
         else:
@@ -50,29 +58,35 @@ class DirectoryWatcher:
             while condition != _condition:
                 current_time = useColor(datetime.now(), red, green, blue)
                 try:
-                    dir_content = list_dir(self.config[0])
+                    dir_content = list_dir(self.config)
 
                     time.sleep(0.35)
 
-                    if len(dir_content) < len(list_dir(self.config[0])):
+                    if len(dir_content) < len(list_dir(self.config)):
                         print(f"""[{current_time}]: New File Created!""")
 
                         # Call on_created event
-                        self.on_created()
+                        if type(self.on_created) == str:
+                            print(check_output(self.on_created.split(" ")).decode("utf-8"))
+                        else:
+                            self.on_created()
 
                         # Increment Condition
                         _condition += 1
-                    elif len(dir_content) > len(list_dir(self.config[0])):
+                    elif len(dir_content) > len(list_dir(self.config)):
                         print(f"""[{current_time}]: One File has been Removed!""")
 
                         # Call deleted event
-                        self.on_deleted()
+                        if type(self.on_created) == str:
+                            print(check_output(self.on_deleted.split(" ")).decode("utf-8"))
+                        else:
+                            self.on_deleted()
 
                         # Increment Condition
                         _condition += 1
                 except KeyboardInterrupt:
                     exit()
                 except FileNotFoundError:
-                    print(f"No file was found named: {self.config[0]}")
+                    print(f"No file was found named: {self.config}")
                 except:
                     pass
