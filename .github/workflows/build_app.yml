@@ -23,7 +23,6 @@ jobs:
       run: |
           pip freeze > requirements.txt
           pip install -r requirements.txt
-          venv .
           pip install pyinstaller
     - name: Build Code
       run: |
