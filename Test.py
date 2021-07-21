@@ -19,7 +19,7 @@ print("Modified")
 watcher = DirectoryWatcher([
     "./",
     adde,
-    "python --version"
+    "node -v"
 ])
 
 watcher.watch(True)
