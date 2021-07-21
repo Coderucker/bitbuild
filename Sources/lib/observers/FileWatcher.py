@@ -20,6 +20,12 @@ class FileWatcher(Events_File):
         green = "73"
         blue = "23"
 
+        def caller(callback):
+            if type(callback) == str:
+                print(check_output(callback.split(" ")).decode("utf-8"))
+            else:
+                callback()
+
         def _watch():
             if type(condition) == bool:
                 while condition or True:
@@ -38,10 +44,7 @@ class FileWatcher(Events_File):
                             print(f"[{current_time}]: {self.config} -> File has Changes")
 
                             # calling action func
-                            if type(self.on_modified) == str:
-                                print(check_output(self.on_modified.split(" ")).decode("utf-8"))
-                            else:
-                                self.on_modified()
+                            caller(self.on_modified)
                     except KeyboardInterrupt:
                         exit_code = 0
                         exit()
@@ -58,6 +61,9 @@ class FileWatcher(Events_File):
                             print(f"Failed to decode file {self.config}")
                             exit_code = 1
                             break
+                    except PermissionError:
+                        print(f"Permission denied to access file -> {self.config}")
+                        break
                     except:
                         continue
             else: 
@@ -79,10 +85,7 @@ class FileWatcher(Events_File):
                             print(f"[{current_time}]: {self.config} -> File has Changes")
 
                             # calling action func
-                            if type(self.on_modified) == str:
-                                print(check_output(self.on_modified.split(" ")).decode("utf-8"))
-                            else:
-                                self.on_modified()
+                            caller(self.on_modified)
 
                             # Increment _condition
                             _condition += 1
@@ -102,6 +105,9 @@ class FileWatcher(Events_File):
                             print(f"Failed to decode file {self.config}")
                             exit_code = 1
                             break
+                    except PermissionError:
+                        print(f"Permission denied to access file -> {self.config}")
+                        break
                     except:
                         continue
 
@@ -113,7 +119,7 @@ class FileWatcher(Events_File):
         # Implement delete event here
         if not os.path.exists(self.config):
             try:
-                self.on_deleted()
+                caller(self.on_deleted)
             except:
                 # Pass if no delete event
                 pass
