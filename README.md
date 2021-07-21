@@ -1,4 +1,4 @@
-# AmberBuild [![Python application](https://github.com/AmberBuild/amberbuild/actions/workflows/test-app.yml/badge.svg)](https://github.com/AmberBuild/amberbuild/actions/workflows/python-app.yml)
+# AmberBuild [![Build application](https://github.com/AmberBuild/amberbuild/actions/workflows/build_app.yml/badge.svg)](https://github.com/AmberBuild/amberbuild/actions/workflows/build_app.yml) [![Python application](https://github.com/AmberBuild/amberbuild/actions/workflows/test-app.yml/badge.svg)](https://github.com/AmberBuild/amberbuild/actions/workflows/python-app.yml)
 Automate your Build Tasks
 > AmberBuild automatically detects file changes inside your project and Build or Execute or Do whatever you want it to do
 
