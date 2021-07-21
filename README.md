@@ -3,6 +3,7 @@ Automate your Build Tasks
 > AmberBuild automatically detects file changes inside your project and Build or Execute or Do whatever you want it to do
 
 # Feature
+- ⚙️Cross Platform, Works across any operating system.
 - 🎇 Just run `amberbuild .` and it us gonna detect changes and run actions according to those changes.
 - ⚙️ Automate your tasks.
 - 💡 Avoid wasting time running build commands
