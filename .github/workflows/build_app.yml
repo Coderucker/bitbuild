@@ -21,11 +21,11 @@ jobs:
         python-version: 3.9
     - name: Install Packages
       run: |
-          python -m pip freeze > requirements.txt
-          python -m pip install -r requirements.txt
-          python -m venv .
-          python -m pip install pyinstaller
+          pip freeze > requirements.txt
+          pip install -r requirements.txt
+          venv .
+          pip install pyinstaller
     - name: Build Code
       run: |
-          python -m pyinstaller --onefile main.py
+          pyinstaller --onefile main.py
     
