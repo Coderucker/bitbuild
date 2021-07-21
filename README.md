@@ -36,7 +36,7 @@ py -m pip install
 python Test.py
 ```
 
-We recommend not to use any third party libraries, As we wanna build this using our own Tech Stack.
+We recommend not to use any third party libraries, As we wanna build this using on our own Tech Stack.
 
 # License
 **AmberBuild** is Licensed Under `Apache License 2.0`
