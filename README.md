@@ -13,7 +13,7 @@ Automate your Build Tasks
 - 🔥 Control the workflow to run
 
 # Installation
-This will be available after the release of verison 1.0.0
+This will be available` after the release of verison 1.0.0
 
 If you wanna test it out Just clone this repo.
 ```
