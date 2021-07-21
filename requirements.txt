@@ -13,7 +13,7 @@ jupyter-client==6.1.11
 jupyter-core==4.7.1
 keyring==23.0.1
 mccabe==0.6.1
-numpy==1.21.0
+numpy==1.21.1
 parso==0.8.1
 pickleshare==0.7.5
 pkginfo==1.7.1
