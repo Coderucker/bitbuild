@@ -18,6 +18,12 @@ class DirectoryWatcher:
         green = "255"
         blue = "200"
 
+        def caller(callback):
+            if type(callback) == str:
+                print(check_output(callback.split(" ")).decode("utf-8"))
+            else:
+                callback()
+
         print(f"[{useColor(datetime.now(), red, green, blue)}]: Watching out for changes in folder -> {self.config}")
 
         if type(condition) == bool:
@@ -32,19 +38,13 @@ class DirectoryWatcher:
                         print(f"""[{current_time}]: New File Created!""")
 
                         # Call on_created event
-                        if type(self.on_created) == str:
-                            print(check_output(self.on_created.split(" ")).decode("utf-8"))
-                        else:
-                            self.on_created()
+                        caller(self.on_created)
 
                     elif len(dir_content) > len(list_dir(self.config)):
                         print(f"""[{current_time}]: One File has been Removed!""")
 
                         # Call deleted event
-                        if type(self.on_created) == str:
-                            print(check_output(self.on_deleted.split(" ")).decode("utf-8"))
-                        else:
-                            self.on_deleted()
+                        caller(self.on_deleted)
 
                 except KeyboardInterrupt:
                     exit()
