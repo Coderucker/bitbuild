@@ -1,8 +1,8 @@
 {
-    "type": "dir",
+    "type": "file",
     "targets": [
-        ".",
-        "$python --version",
-        "print('deleted')"
+        "./current_task",
+        "python --version",
+        "node -v"
     ]
 }
