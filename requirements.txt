@@ -22,7 +22,7 @@ Pygments==2.7.4
 pylint==2.6.0
 python-dateutil==2.8.2
 pywin32==301
-pyzmq==22.0.2
+pyzmq==22.1.0
 readme-renderer==29.0
 requests-toolbelt==0.9.1
 rfc3986==1.5.0
