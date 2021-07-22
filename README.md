@@ -16,7 +16,7 @@ Automate your Build Tasks
 This will be available` after the release of verison 1.0.0
 
 If you wanna test it out Just clone this repo.
-```
+```sh
 git clone https://github.com/AmberBuild/amberbuild.git
 cd amberbuild
 py -m pip install
@@ -29,7 +29,7 @@ If you have any ideas or problems related to this repo, open a issue about it.
 If you have a idea and you can implement it by yourself, open a PR.
 
 To contribute, clone this repo first :)
-```
+```sh
 git clone https://github.com/AmberBuild/amberbuild.git
 cd amberbuild
 py -m pip install
