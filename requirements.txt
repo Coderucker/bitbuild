@@ -5,7 +5,7 @@ colorama==0.4.4
 decorator==4.4.2
 docutils==0.17.1
 ipykernel==6.0.3
-ipython==7.20.0
+ipython==7.25.0
 ipython-genutils==0.2.0
 isort==5.9.2
 jedi==0.18.0
