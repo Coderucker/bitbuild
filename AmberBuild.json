@@ -1,7 +1,7 @@
 {
-    "type": "file",
+    "type": "dir",
     "targets": [
-        "./current_task",
+        "./",
         "python --version",
         "node -v"
     ]

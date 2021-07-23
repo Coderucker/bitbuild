@@ -1,11 +1,13 @@
 import time
 from datetime import datetime
-from typing import Union
+from typing import Callable, Union
 from subprocess import check_output
 
 from Sources.colormania.colormania import useColor
 from Sources.src.iterate import iterate
 from Sources.src.list_dir import list_dir
+from Sources.src.get_unique import get_unique
+from Sources.src.concat_array import concat_arrays
 
 class DirectoryWatcher:
     def __init__(self, config: list[str, str, str]) -> None:
@@ -18,7 +20,8 @@ class DirectoryWatcher:
         green = "255"
         blue = "200"
 
-        def caller(callback):
+        # Function to call Callables
+        def caller(callback: Callable):
             if type(callback) == str:
                 print(check_output(callback.split(" ")).decode("utf-8"))
             else:
@@ -36,6 +39,9 @@ class DirectoryWatcher:
 
                     if len(dir_content) < len(list_dir(self.config)):
                         print(f"""[{current_time}]: New File Created!""")
+                        
+                        changes = get_unique(concat_arrays(dir_content, list_dir(self.config)))
+                        print(f"""Changes: {changes}""")
 
                         # Call on_created event
                         caller(self.on_created)
@@ -43,13 +49,20 @@ class DirectoryWatcher:
                     elif len(dir_content) > len(list_dir(self.config)):
                         print(f"""[{current_time}]: One File has been Removed!""")
 
+                        changes = get_unique(concat_arrays(dir_content, list_dir(self.config)))
+                        print(f"""Changes: {changes}""")
+
                         # Call deleted event
                         caller(self.on_deleted)
 
                 except KeyboardInterrupt:
                     exit()
+                except NotADirectoryError:
+                    print(f"Error: Provided targeted value {self.config} is not a directory")
+                    exit()
                 except FileNotFoundError:
                     print(f"No file was found named: {self.config}")
+                    exit()
                 except:
                     pass
         else:
