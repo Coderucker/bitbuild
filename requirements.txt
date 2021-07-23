@@ -16,7 +16,7 @@ mccabe==0.6.1
 parso==0.8.1
 pickleshare==0.7.5
 pkginfo==1.7.1
-prompt-toolkit==3.0.14
+prompt-toolkit==3.0.19
 pycodestyle==2.7.0
 Pygments==2.7.4
 pylint==2.6.0
