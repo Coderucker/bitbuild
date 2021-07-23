@@ -9,7 +9,7 @@ ipython==7.25.0
 ipython-genutils==0.2.0
 isort==5.9.2
 jedi==0.18.0
-jupyter-client==6.1.11
+jupyter-client==6.1.12
 jupyter-core==4.7.1
 keyring==23.0.1
 mccabe==0.6.1
