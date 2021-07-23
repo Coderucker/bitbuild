@@ -40,7 +40,11 @@ class DirectoryWatcher:
                     if len(dir_content) < len(list_dir(self.config)):
                         print(f"""[{current_time}]: New File Created!""")
                         
-                        changes = get_unique(concat_arrays(dir_content, list_dir(self.config)))
+                        changes = useColor(
+                            message=get_unique(concat_arrays(dir_content, list_dir(self.config))), 
+                            red="255", 
+                            green="145",
+                            blue="67")
                         print(f"""Changes: {changes}""")
 
                         # Call on_created event
@@ -49,7 +53,11 @@ class DirectoryWatcher:
                     elif len(dir_content) > len(list_dir(self.config)):
                         print(f"""[{current_time}]: One File has been Removed!""")
 
-                        changes = get_unique(concat_arrays(dir_content, list_dir(self.config)))
+                        changes = useColor(
+                            message=get_unique(concat_arrays(dir_content, list_dir(self.config))), 
+                            red="255", 
+                            green="145",
+                            blue="67")
                         print(f"""Changes: {changes}""")
 
                         # Call deleted event
