@@ -1,3 +1,4 @@
 {
-    "targets": ["file", "action"]
+    "type": "file",
+    "targets": ["File.md", "echo 'Hello'"]
 }
