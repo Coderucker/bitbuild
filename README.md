@@ -38,6 +38,38 @@ python Test.py
 
 We recommend not to use any third party libraries, As we wanna build this using on our own Tech Stack.
 
+# Building
+Building this program is easy using `pyinstaller`.
+First, you need to setup a Virtual Environment using python and install all required packages.
+- Windows
+
+    ```ps1
+    py -m venv .
+    py -m pip freeze > requirements.txt
+    py -m pip install -r requirements.txt
+    ```
+- Linux or Unix
+    ```sh
+    python3 -m venv .
+    python3 -m pip freeze > requirements.txt
+    python3 -m pip install -r requirements.txt
+    ```
+Then, you need to install `pyinstaller` package from `PYPI`.
+and Build it to a bundled executable file.
+- Windows
+
+    ```ps1
+    .\Scripts\activate
+    py -m pip install
+    py -m pyinstaller --onefile main.py
+    ```
+- Linux or Unix
+    ```sh
+    source Scripts/activate
+    python3 pip install pyinstaller
+    python3 -m pyinstaller --onefile main.py
+    ```
+
 # License
 **AmberBuild** is Licensed Under `Apache License 2.0`
 It is legit to use this software any where.
