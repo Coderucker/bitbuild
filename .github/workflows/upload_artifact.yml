@@ -13,6 +13,7 @@ jobs:
 
     - name: Install Packages
       run: |
+        python -m pip freeze > requirements.txt
         python -m pip install -r requirements.txt
 
     - name: Run Build Using PyInstaller
