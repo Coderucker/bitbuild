@@ -18,8 +18,8 @@ jobs:
 
     - name: Run Build Using PyInstaller
       run: |
-        python3 -m pip install pyinstaller
-        python3 -m pyinstaller main.py
+        pip install pyinstaller
+        pyinstaller main.py
 
     - uses: actions/upload-artifact@v2
       with:
