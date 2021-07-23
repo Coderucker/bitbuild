@@ -8,12 +8,3 @@ def get_unique(_list: list):
             unique_list.append(x)
     
     return unique_list
-
-print(get_unique([
-    "./man",
-    "./dir",
-    "conde",
-    "ccc",
-    "conde",
-    "ccc"
-]))
