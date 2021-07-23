@@ -15,10 +15,10 @@ jobs:
       run: |
         python3 -m pip freeze > requirements.txt
         python3 -m pip install -r requirements.txt
-        python3 -m pip install pyinstaller
 
     - name: Run Build Using PyInstaller
       run: |
+        python3 -m pip install pyinstaller
         python3 -m pyinstaller main.py
 
     - uses: actions/upload-artifact@v2
