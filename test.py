@@ -22,4 +22,4 @@ watcher = FileWatcher([
     "node -v"
 ])
 
-watcher.watch(True)
+watcher.watch(3)
