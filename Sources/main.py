@@ -1,5 +1,5 @@
-from Sources.lib.observers.DirectoryWatcher import DirectoryWatcher
-from Sources.lib.observers.FileWatcher import FileWatcher
+from Sources.src.observers.DirectoryWatcher import DirectoryWatcher
+from Sources.src.observers.FileWatcher import FileWatcher
 
 # Test files
-from Sources.lib.observers.dir_watcher import DirectoryWatcher as DirTestsWatcher
+from Sources.main import DirectoryWatcher as DirTestsWatcher
