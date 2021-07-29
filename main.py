@@ -1,12 +1,12 @@
 import sys
+import json
 
 from Sources.main import (DirectoryWatcher, FileWatcher)
-from Sources.lib.read_config import read_config
 
 sys_args = sys.argv.copy()
 
 def main():
-    config = read_config()
+    config = json.loads(open("AmberBuild.json").read())
     config_type = config.get("type", "file")
     config_file = config.get("targets", "main.py")[0]
     config_on_change_command = config.get("targets", "python main.py")[1]

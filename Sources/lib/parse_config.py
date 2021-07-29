@@ -7,3 +7,4 @@ def parse_config(config):
     return parsed
   except JSONDecodeError:
     print("An Error Occured While Decoding")
+    return

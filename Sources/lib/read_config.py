@@ -1,3 +1,4 @@
+import json
 import os
 from pathlib import Path
 
@@ -12,7 +13,7 @@ def read_config():
 
         for res in search_result:
             try:
-                parsed = parse_config(open(res).read())
+                parsed: json.loads = parse_config(open(res).read())
 
                 return parsed
             except FileNotFoundError:
