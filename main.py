@@ -1,6 +1,6 @@
 import sys
 
-from Sources.main import (DirectoryWatcher, FileWatcher)
+from Sources.main import (DirectoryWatcher, FileWatcher, DirTestsWatcher)
 from Sources.lib.read_config import read_config
 
 sys_args = sys.argv.copy()
