@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 
 from Sources.constants import CONFIG_SUPPORTED_EXTENSIONS
-from Sources.lib.parse_config import parse_config
+from Sources.src.parse_config import parse_config
 
 def read_config():
     search_path = Path(os.getcwd())

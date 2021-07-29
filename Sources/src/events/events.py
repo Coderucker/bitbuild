@@ -1,6 +1,6 @@
 from typing import Callable
 
-from Sources.lib.events.event import Event
+from Sources.src.events.event import Event
 
 EVENT_TYPE = [
     "ON_CREATED",

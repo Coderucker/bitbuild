@@ -5,7 +5,7 @@ from typing import Union
 from subprocess import check_output
 
 from Sources.colormania.colormania import useColor
-from Sources.lib.events.events import Events_File
+from Sources.src.events.events import Events_File
 
 class FileWatcher(Events_File):
     def __init__(self, config: list[str, str, str]) -> None:
