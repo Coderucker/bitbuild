@@ -1,16 +1,16 @@
 import sys
-import json
 
 from Sources.main import (DirectoryWatcher, FileWatcher)
+from Sources.lib.read_config import read_config
 
 sys_args = sys.argv.copy()
 
 def main():
-    config = json.loads(open("AmberBuild.json").read())
-    config_type = config.get("type", "file")
-    config_file = config.get("targets", "main.py")[0]
-    config_on_change_command = config.get("targets", "python main.py")[1]
-    config_on_delete_command = config.get("targets", "print('deleted')")[2]
+    config = read_config()
+    config_type = config.get("type")
+    config_file = config.get("targets")[0]
+    config_on_change_command = config.get("targets")[1]
+    config_on_delete_command = config.get("targets")[2]
 
     def get_count_index():
         if sys_args.count('--count') > 0:
