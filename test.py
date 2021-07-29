@@ -23,3 +23,4 @@ watcher = FileWatcher([
 ])
 
 watcher.watch(3)
+
