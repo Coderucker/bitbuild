@@ -1,1 +1,1 @@
-CONFIG_SUPPORTED_EXTENSIONS = ["AmberBuild.json", "amberbuild.json", ".amberbuildrc", ".amberbuild", ".amber"]
+CONFIG_SUPPORTED_EXTENSIONS = ["bitbuild.json", "bitbuild.json", ".bitbuildrc", ".bitbuild", ".amber"]

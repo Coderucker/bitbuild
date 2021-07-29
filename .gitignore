@@ -28,11 +28,15 @@
 *.la
 *.a
 *.lib
+Lib/
 
 # Executables
 *.exe
 *.out
 *.app
+
+# Spec files
+*.spec
 
 # Python Build files
 dist/
@@ -44,7 +48,7 @@ __pycache__/
 # Notage files
 *.note
 
-# Cache File by amberbuild 
+# Cache File by bitbuild 
 *.cache.txt
 
 # Current task
