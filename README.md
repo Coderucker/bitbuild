@@ -1,7 +1,7 @@
 
-# BitBuild [![Build application](Bit-Build)](https://github.com/Bit-Build/bitbuild/actions/workflows/build_app.yml) [![Python application](https://github.com/Bit-Build/bitbuild/actions/workflows/test-app.yml/badge.svg)](https://github.com/Bit-Build/bitbuild/actions/workflows/python-app.yml)
+# BitBuild [![Build application](https://github.com/Bit-Build/bitbuild/actions/workflows/build_app.yml/badge.svg)](https://github.com/Bit-Build/bitbuild/actions/workflows/build_app.yml) [![Python application](https://github.com/Bit-Build/bitbuild/actions/workflows/test-app.yml/badge.svg)](https://github.com/Bit-Build/bitbuild/actions/workflows/python-app.yml) [![Upload Build Artifact](https://github.com/Bit-Build/bitbuild/actions/workflows/upload_artifact.yml/badge.svg)](https://github.com/Bit-Build/bitbuild/actions/workflows/upload_artifact.yml) [![Greetings](https://github.com/Bit-Build/bitbuild/actions/workflows/greetings.yml/badge.svg)](https://github.com/Bit-Build/bitbuild/actions/workflows/greetings.yml)
 Automate your Build Tasks
-> bitbuild automatically detects file changes inside your project and Build or Execute or Do whatever you want it to do
+> BitBuild automatically detects file changes inside your project and Build or Execute or Do whatever you want it to do
 
 # Feature
 - ⚙️Cross Platform, Works across any operating system.
