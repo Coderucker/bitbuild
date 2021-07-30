@@ -19,6 +19,9 @@
 *.dylib
 *.dll
 
+# Venv files
+venv/
+
 # Fortran module files
 *.mod
 *.smod
