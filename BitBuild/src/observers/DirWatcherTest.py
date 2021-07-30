@@ -1,6 +1,4 @@
-import time
 from datetime import datetime
-from typing import Callable, Union
 from subprocess import check_output
 import random
 
@@ -28,8 +26,6 @@ class DirectoryWatcher:
             print("Condition: ", _condition)
             try:
                 dir_content = list_dir(self.config)
-
-                time.sleep(0.35)
 
                 if _condition % 2 == 0:
                     dir_content.pop()

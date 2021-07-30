@@ -1,7 +1,5 @@
 import os
-import time
 from datetime import datetime
-from typing import Union
 from subprocess import check_output
 import random
 
@@ -38,8 +36,6 @@ class FileWatcher(Events_File):
 
                 try:
                     f = open(self.config).read()
-                    
-                    time.sleep(0.35)
 
                     f += f"{random.random()} + \n"
 
