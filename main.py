@@ -1,7 +1,7 @@
 import sys
 
-from Sources.main import (DirectoryWatcher, FileWatcher, DirWatcherTests, FileWatcherTests)
-from Sources.src.read_config import read_config
+from BitBuild.main import (DirectoryWatcher, FileWatcher, DirWatcherTests, FileWatcherTests)
+from BitBuild.src.read_config import read_config
 
 sys_args = sys.argv.copy()
 
