@@ -1,8 +1,8 @@
 {
-    "type": "dir",
+    "type": "file",
     "targets": [
-        "./",
-        "python --version",
-        "node -v"
+        "./main.py",
+        "python test.py",
+        "node --version"
     ]
 }
