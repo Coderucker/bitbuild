@@ -44,13 +44,13 @@ First, you need to setup a Virtual Environment using python and install all requ
 - Windows
 
     ```ps1
-    py -m venv .
+    py -m venv venv
     py -m pip freeze > requirements.txt
     py -m pip install -r requirements.txt
     ```
 - Linux or Unix
     ```sh
-    python3 -m venv .
+    python3 -m venv venv
     python3 -m pip freeze > requirements.txt
     python3 -m pip install -r requirements.txt
     ```
@@ -59,14 +59,14 @@ and Build it to a bundled executable file.
 - Windows
 
     ```ps1
-    .\Scripts\activate
+    .\venv\Scripts\activate
     py -m pip install
     py -m pyinstaller --onefile main.py
     ```
 - Linux or Unix
     ```sh
-    source Scripts/activate
-    python3 pip install pyinstaller
+    source venv/Scripts/activate
+    python3 -m pip install pyinstaller
     python3 -m pyinstaller --onefile main.py
     ```
 
