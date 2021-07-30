@@ -1,4 +1,5 @@
-# BitBuild [![Build application](https://github.com/bitbuild/bitbuild/actions/workflows/build_app.yml/badge.svg)](https://github.com/bitbuild/bitbuild/actions/workflows/build_app.yml) [![Python application](https://github.com/bitbuild/bitbuild/actions/workflows/test-app.yml/badge.svg)](https://github.com/bitbuild/bitbuild/actions/workflows/python-app.yml)
+
+# BitBuild [![Build application](Bit-Build)](https://github.com/Bit-Build/bitbuild/actions/workflows/build_app.yml) [![Python application](https://github.com/Bit-Build/bitbuild/actions/workflows/test-app.yml/badge.svg)](https://github.com/Bit-Build/bitbuild/actions/workflows/python-app.yml)
 Automate your Build Tasks
 > bitbuild automatically detects file changes inside your project and Build or Execute or Do whatever you want it to do
 
