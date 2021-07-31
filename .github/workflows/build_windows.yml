@@ -19,14 +19,22 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.9
-    - name: Install Packages
+    - name: Install Cython
       run: |
           pip freeze > requirements.txt
           pip install -r requirements.txt
           pip install Cython
+    - name: Install Cpython for Python C API
+      run: |
+          git clone https://github.com/python/cpython.git
     - name: Build Code
       run: |
           mkdir build
           cython main.py --embed
-          gcc main.c -o build/main.exe
+          gcc main.c -o build/main.exe -i cpython/Include
+    - uses: actions/upload-artifact@v2
+      with:
+        name: build-artifact-win32
+        path: ./build
+        if-no-files-found: error
     
