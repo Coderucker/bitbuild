@@ -1,0 +1,40 @@
+name: Build application for Windows
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    strategy:
+      matrix: 
+        platform: [ubuntu-latest]
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Install Packages
+      run: |
+          pip freeze > requirements.txt
+          pip install -r requirements.txt
+          pip install Cython
+    - name: Install Cpython for Python C API
+      run: |
+          git clone https://github.com/python/cpython.git
+    - name: Build Code
+      run: |
+          cython main.py --embed
+          mkdir build
+          gcc main.c -o build/main -i cpython/Include
+    - uses: actions/upload-artifact@v2
+      with:
+        name: build-artifact-macos
+        path: ./build
+        if-no-files-found: error
+    
