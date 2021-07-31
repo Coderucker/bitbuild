@@ -33,7 +33,7 @@ jobs:
           cython main.py --embed
           echo "Installing Apple Developer Tools"
           xcode-select --install
-          gcc main.c -o build/main.out -i cpython/Include
+          gcc main.c -o build/main.out -Icpython/Include
     - uses: actions/upload-artifact@v2
       with:
         name: build-artifact-macos

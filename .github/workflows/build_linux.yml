@@ -1,4 +1,4 @@
-name: Build application for Windows
+name: Build application for Linux
 
 on:
   push:
@@ -31,7 +31,7 @@ jobs:
       run: |
           cython main.py --embed
           mkdir build
-          gcc main.c -o build/main -i cpython/Include
+          gcc main.c -o build/main -Icpython/Include
     - uses: actions/upload-artifact@v2
       with:
         name: build-artifact-macos
