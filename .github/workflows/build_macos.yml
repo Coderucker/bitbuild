@@ -24,6 +24,9 @@ jobs:
           pip freeze > requirements.txt
           pip install -r requirements.txt
           pip install Cython
+    - name: Install Cpython for Python C API
+      run: |
+          git clone https://github.com/python/cpython.git
     - name: Build Code
       run: |
           mkdir build
