@@ -2,6 +2,7 @@
 This is a test file. This shall only be edited for testing.
 This file does not include the Real DirectoryWatcher API. Hence, it automatically create changes and detect them.
 """
+from sys import exit
 from datetime import datetime
 from subprocess import check_output
 import random

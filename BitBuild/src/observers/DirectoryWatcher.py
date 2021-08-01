@@ -1,3 +1,5 @@
+from sys import exit
+
 import time
 from datetime import datetime
 from typing import Callable, Union
