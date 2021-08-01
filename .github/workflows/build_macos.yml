@@ -31,6 +31,6 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: build-artifact-macos
-        path: ./main.out
+        path: dist/main.out
         if-no-files-found: error
     

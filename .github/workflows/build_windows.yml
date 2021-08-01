@@ -30,6 +30,6 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: build-artifact-win32
-        path: ./main.exe
+        path: dist/main.exe
         if-no-files-found: error
     
