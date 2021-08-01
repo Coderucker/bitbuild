@@ -32,10 +32,11 @@ jobs:
       run: |
           echo "Creating the build dir"
           mkdir build
-          echo "Using cython to convert Python program to C Program"
-          cython main.py --embed
-          echo "Build main.c using gcc"
-          gcc main.c -o build/main.exe -Icpython/Include -Icpython/PC
+          python Scripts/make_win32.py
+      # echo "Using cython to convert Python program to C Program"
+      # cython main.py --embed
+      # echo "Build main.c using gcc"
+      # gcc main.c -o build/main.exe -Icpython/Include -Icpython/PC
     - uses: actions/upload-artifact@v2
       with:
         name: build-artifact-win32
