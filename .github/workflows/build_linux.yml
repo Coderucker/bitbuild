@@ -23,22 +23,13 @@ jobs:
       run: |
           pip freeze > requirements.txt
           pip install -r requirements.txt
-          pip install Cython
-    - name: Install Cpython for Python C API
+          pip install pyinstaller
+    - name: Build Code using pyinstaller
       run: |
-          echo "Cloning the cpython repo"
-          git clone https://github.com/python/cpython.git
-    - name: Build Code
-      run: |
-          echo "Creating Build dir"
-          mkdir build
-          echo "Using Cython to convert Python program to C program"
-          cython main.py --embed
-          echo "Compile main.c using gcc"
-          gcc main.c -o build/main -Icpython/Include -Icpython
+          pyinstaller --onefile main.py
     - uses: actions/upload-artifact@v2
       with:
-        name: build-artifact-macos
-        path: ./build
+        name: build-artifact-linux
+        path: dist/
         if-no-files-found: error
     
