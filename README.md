@@ -1,7 +1,7 @@
 
 # BitBuild
-[![Build application](https://github.com/Bit-Build/bitbuild/actions/workflows/build_windows.yml/badge.svg)](https://github.com/Bit-Build/bitbuild/actions/workflows/build_windows.yml) [![Build application](https://github.com/Bit-Build/bitbuild/actions/workflows/build_linux.yml/badge.svg)](https://github.com/Bit-Build/bitbuild/actions/workflows/build_linux.yml) [![Build application](https://github.com/Bit-Build/bitbuild/actions/workflows/build_macos.yml/badge.svg)](https://github.com/Bit-Build/bitbuild/actions/workflows/build_macos.yml) [![Python application](https://github.com/Bit-Build/bitbuild/actions/workflows/test-app.yml/badge.svg)](https://github.com/Bit-Build/bitbuild/actions/workflows/python-app.yml) [![Greetings](https://github.com/Bit-Build/bitbuild/actions/workflows/greetings.yml/badge.svg)](https://github.com/Bit-Build/bitbuild/actions/workflows/greetings.yml) <br>
-Automate your Build Tasks
+[![Build application](https://github.com/Bit-Build/bitbuild/actions/workflows/build_windows.yml/badge.svg)](https://github.com/Bit-Build/bitbuild/actions/workflows/build_windows.yml) [![Build application](https://github.com/Bit-Build/bitbuild/actions/workflows/build_linux.yml/badge.svg)](https://github.com/Bit-Build/bitbuild/actions/workflows/build_linux.yml) [![Build application](https://github.com/Bit-Build/bitbuild/actions/workflows/build_macos.yml/badge.svg)](https://github.com/Bit-Build/bitbuild/actions/workflows/build_macos.yml) [![Python application](https://github.com/Bit-Build/bitbuild/actions/workflows/test-app.yml/badge.svg)](https://github.com/Bit-Build/bitbuild/actions/workflows/python-app.yml) <br> <br>
+**Automates your Build Tasks**
 > BitBuild automatically detects file changes inside your project and Build or Execute or Do whatever you want it to do
 
 # Feature
