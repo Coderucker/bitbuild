@@ -26,12 +26,16 @@ jobs:
           pip install Cython
     - name: Install Cpython for Python C API
       run: |
+          echo "Cloning the cpython repo"
           git clone https://github.com/python/cpython.git
     - name: Build Code
       run: |
+          echo "Creating the build dir"
           mkdir build
+          echo "Using cython to convert Python program to C Program"
           cython main.py --embed
-          gcc main.c -o build/main.exe -Icpython/Include
+          echo "Build main.c using gcc"
+          gcc main.c -o build/main.exe -Icpython/Include -Icpython/
     - uses: actions/upload-artifact@v2
       with:
         name: build-artifact-win32
