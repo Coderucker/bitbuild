@@ -32,13 +32,8 @@ jobs:
         name: build-artifact-win32
         path: dist/
         if-no-files-found: error
-    - name: Download The Build Artifact
-      uses: actions/download-artifact@v2.0.10
-
-      with:
-        name: build-artifact-win32
-      
-    - name: Display Download dir tree
+        
+    - name: Display File Tree
       run: ls -R
 
     
