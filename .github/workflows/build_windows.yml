@@ -23,23 +23,13 @@ jobs:
       run: |
           pip freeze > requirements.txt
           pip install -r requirements.txt
-          pip install Cython
-    - name: Install Cpython for Python C API
+          pip install pyinstaller
+    - name: Build Code using pyinstaller
       run: |
-          echo "Cloning the cpython repo"
-          git clone https://github.com/python/cpython.git
-    - name: Build Code
-      run: |
-          echo "Creating the build dir"
-          mkdir build
-          python Scripts/make_win32.py main.py
-      # echo "Using cython to convert Python program to C Program"
-      # cython main.py --embed
-      # echo "Build main.c using gcc"
-      # gcc main.c -o build/main.exe -Icpython/Include -Icpython/PC
+          pyinstaller --onefile main.py
     - uses: actions/upload-artifact@v2
       with:
         name: build-artifact-win32
-        path: ./build
+        path: ./main.exe
         if-no-files-found: error
     
