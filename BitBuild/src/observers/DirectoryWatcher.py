@@ -12,6 +12,10 @@ from BitBuild.src.get_unique import get_unique
 from BitBuild.src.concat_array import concat_arrays
 
 class DirectoryWatcher:
+    """
+    API used by BitBuild to watch and detect changes inside folders
+    """
+
     def __init__(self, config: list[str, str, str]) -> None:
         self.config = config[0]
         self.on_created = config[1]
