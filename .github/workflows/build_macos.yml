@@ -35,7 +35,7 @@ jobs:
           echo "Use cython to convert python program to c program"
           cython main.py --embed
           echo "Building main.c using gcc"
-          gcc main.c -o build/main.out -Icpython/Include -Icpython/
+          gcc main.c -o build/main.out -Icpython/Include -Icpython/PC
     - uses: actions/upload-artifact@v2
       with:
         name: build-artifact-macos
