@@ -32,7 +32,7 @@ jobs:
       run: |
           echo "Creating the build dir"
           mkdir build
-          python Scripts/make_win32.py
+          python Scripts/make_win32.py main.py
       # echo "Using cython to convert Python program to C Program"
       # cython main.py --embed
       # echo "Build main.c using gcc"
