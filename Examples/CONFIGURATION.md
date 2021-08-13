@@ -1,6 +1,6 @@
 # Configuring your workspace with BitBuild
 Configuring BitBuild with your Project is easier than you think.
-First of all, you need to create a configuration file named `BitBuild.json` in the root Directory of your project.
+First of all, you need to create a configuration file named `Bitfile` in the root Directory of your project.
 The configuration would be in a `JSON` Format.This expects two properties.
 1) `type`: type of the target. Should be a value `dir` or `file`.
 2) `targets`: This is an array which expects values in this order. 
@@ -36,7 +36,6 @@ Supportive Links:
 - See Supported File Extensions [here](https://github.com/Bit-Build/bitbuild/blob/main/Examples/CONFIGURATION.md#Supported-Files-Types).
 
 # Supported-Files-Types
-- `BitBuild.json`
-- `bitbuild.json`
-- `.bitbuildrc`
-- `.bitbuild`
+- `Bitfile`
+- `Config.bitfile`
+- `config.bitfile`

@@ -1,8 +1,8 @@
 {
     "type": "file",
     "targets": [
-        "./setup-ui.py",
-        "python setup-ui.py",
+        "./main.py",
+        "python main.py",
         "python --version"
     ]
 }

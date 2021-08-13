@@ -1,1 +1,1 @@
-CONFIG_SUPPORTED_EXTENSIONS = ["bitbuild.json", "bitbuild.json", ".bitbuildrc", ".bitbuild"]
+CONFIG_SUPPORTED_EXTENSIONS = ["Bitfile", "Config.bitfile", "config.bitfile"]
