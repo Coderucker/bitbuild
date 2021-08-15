@@ -1,0 +1,1 @@
+SUPPORTED_OS = ["windows", "linux", "macos"]
