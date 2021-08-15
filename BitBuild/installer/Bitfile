@@ -1,8 +1,0 @@
-{
-    "type": "file",
-    "targets": [
-        "./main.py",
-        "python main.py",
-        "python --version"
-    ]
-}
