@@ -27,10 +27,11 @@ jobs:
     - name: Build Code using pyinstaller
       run: |
           pyinstaller --onefile main.py
+          mv dist/main dist/bitbuild
     - uses: actions/upload-artifact@v2
       with:
         name: build-artifact-linux
-        path: dist/main
+        path: dist/bitbuild
         if-no-files-found: error
     
     - name: Display File Tree
