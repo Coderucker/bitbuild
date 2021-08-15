@@ -37,7 +37,5 @@ def main():
         print("Error: Config not found :(")
 
 if __name__ == "__main__":
-    #main()
     installation()
-
-# curl -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/swudots/swudo/releases/latest
+    main()
