@@ -2,7 +2,7 @@ import sys
 
 from BitBuild.main import (DirectoryWatcher, FileWatcher, DirWatcherTests, FileWatcherTests)# Imports Include test files too
 from BitBuild.src.read_config import read_config
-from BitBuild.installer.installer import installation
+from BitBuild.installer.installation import installation
 
 sys_args = sys.argv.copy()
 
