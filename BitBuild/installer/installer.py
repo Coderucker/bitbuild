@@ -1,18 +1,24 @@
 import os
 from pathlib import Path
+import requests
 import shutil
 from BitBuild.util.get_os import get_os
 from BitBuild.lib.version import version
-import requests
-
+from BitBuild.util.extract_file import extract_file
 
 def error_message():
     """
     Error message when no release asset has been found
     """
+
     raise BaseException(f"No releases found for version: {version}")
+    
 
 def installation():
+    """
+    The installer function to fetch the executable from github releases and download it.
+    """
+
     preferred_os = get_os()
 
     print("Installing Latest Binary Release")
