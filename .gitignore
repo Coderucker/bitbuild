@@ -55,3 +55,6 @@ current_task
 
 # Shared files
 /share
+
+# Test files
+*t.py
