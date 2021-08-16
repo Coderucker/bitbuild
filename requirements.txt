@@ -1,6 +1,6 @@
 colorama==0.4.4
 pycodestyle==2.6.0
-Pygments==2.7.4
+Pygments==2.10.0
 pyinstaller==4.4
 pyinstaller-hooks-contrib==2021.2
 requests==2.26.0
