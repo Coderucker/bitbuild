@@ -29,10 +29,13 @@ class InstallerWindow:
             Destroys a window instance
             """
             app.destroy()
+        
 
+        reset_button = Button(app, text="Reset settings", font=("SF Pro Display", 12), bg="#166edc", padx=20, pady=7, border=0, fg="#fff", command=repair_func)
+        reset_button.place(x=180, y=500)
 
-        exit_button = Button(app, text="Exit", font=("SF Pro Display", 12), bg="#FF0000", padx=20, pady=7, border=0, fg="#fff", command=destroy_window)
-        exit_button.place(x=200, y=500)
+        uninstall_button = Button(app, text="Uninstall", font=("SF Pro Display", 12), bg="#FF0000", padx=20, pady=7, border=0, fg="#fff", command=uninstall_func)
+        uninstall_button.place(x=380, y=500)
 
         app.resizable(False, False)
 

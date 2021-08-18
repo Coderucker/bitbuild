@@ -1,7 +1,7 @@
 import os
 from BitBuild.util.get_os import get_os
 
-def is_in_path() -> tuple(bool, str):
+def is_in_path():
     """
     Returns a tuple with the first element with a value of boolean
     whether if the env var exists. And the second element with path to env if the 
@@ -11,7 +11,7 @@ def is_in_path() -> tuple(bool, str):
 
     for var in VARS:
         if var.endswith("bitbuild.exe" if get_os() == "windows" else "bitbuild"):
-            return (True, var)
-
-    # Return false if not found
-    return (False, None)
+            return var
+    else:
+        # Return false if not found
+        return None
