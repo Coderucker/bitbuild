@@ -2,7 +2,6 @@ import sys
 
 from BitBuild.main import (DirectoryWatcher, FileWatcher, DirWatcherTests, FileWatcherTests)# Imports Include test files too
 from BitBuild.src.read_config import read_config
-from BitBuild.installer.installation import installation
 
 sys_args = sys.argv.copy()
 
@@ -37,5 +36,4 @@ def main():
         print("Error: Config not found :(")
 
 if __name__ == "__main__":
-    installation()
     main()
