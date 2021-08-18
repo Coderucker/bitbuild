@@ -9,25 +9,33 @@ The configuration would be in a `JSON` Format.This expects two properties.
 ```
 
 Example Configuration for watching a Directory.
+- Type: Sets the type of target
+- Targets[0] is the Path to watch changes
+- Targets[1] Should be a command to run for a on_created event
+- Targets[2] Should be a command to run for a on_deleted event
 ```json
 {
-    "type": "dir",// Sets the type of target
+    "type": "dir",
     "targets": [
-        "./lib",// Path to watch changes
-        "python file_created.py",// Should be a command to run for a on_created event
-        "python file_deleted.py"// Should be a command to run for a on_deleted event
+        "./lib",
+        "python file_created.py",
+        "python file_deleted.py"
     ]
 }
 ```
 
 Example Configuration for watching a file.
+- Type: Sets the type of target
+- Targets[0] the Path to watch changes
+- Targets[1] Should be a command to run for a on_created event
+- Targets[2] Should be a command to run for a on_deleted event
 ```json
 {
-    "type": "file", // Sets the type of target
+    "type": "file", 
     "targets": [
-        "./main.py" ,// Path to watch changes
-        "python Program.py", // Should be a command to run for a on_created event
-        "python Delete_Program.py" // Should be a command to run for a on_deleted event
+        "./main.py" ,
+        "python Program.py", 
+        "python Delete_Program.py" 
     ]
 }
 ```
