@@ -11,7 +11,7 @@ import random
 from BitBuild.colormania.colormania import useColor
 from BitBuild.src.events.events import Events_File
 
-class FileWatcher(Events_File):
+class FileWatcherTest(Events_File):
     def __init__(self, config: list[str, str, str]) -> None:
         super().__init__()
         self.config = config[0]

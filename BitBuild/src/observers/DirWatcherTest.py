@@ -10,7 +10,7 @@ import random
 from BitBuild.colormania.colormania import useColor
 from BitBuild.src.list_dir import list_dir
 
-class DirectoryWatcher:
+class DirectoryWatcherTest:
     def __init__(self, config: list[str, str, str]) -> None:
         self.config = config[0]
         self.on_created = config[1]
