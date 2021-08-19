@@ -1,8 +1,8 @@
 {
     "type": "file",
     "targets": [
-        "./test.py",
-        "python test.py",
+        "./BitBuild/installer/InstallerWindow.py",
+        "python installer.py",
         "node --version"
     ]
 }
