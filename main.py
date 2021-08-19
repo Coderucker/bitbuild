@@ -1,6 +1,6 @@
 import sys
 
-from BitBuild.main import (DirectoryWatcher, FileWatcher, DirWatcherTests, FileWatcherTests)# Imports Include test files too
+from BitBuild.main import (DirectoryWatcher, FileWatcher, DirectoryWatcherTest, FileWatcherTest)# Imports Include test files too
 from BitBuild.src.read_config import read_config
 
 sys_args = sys.argv.copy()
@@ -34,6 +34,7 @@ def main():
             print(f"No such configuration: {config_type}")
     except AttributeError:
         print("Error: Config not found :(")
+
 
 if __name__ == "__main__":
     main()
