@@ -1,7 +1,7 @@
 {
     "type": "file",
     "targets": [
-        "./main.py",
+        "./test.py",
         "python test.py",
         "node --version"
     ]
