@@ -1,4 +1,6 @@
+# Importing exit() function from sys module to avoid TypeError in the executable build by Pyinstaller 
 from sys import exit
+
 import os
 import time
 from datetime import datetime
