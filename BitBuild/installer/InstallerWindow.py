@@ -85,12 +85,24 @@ class InstallerWindow:
             root = Tk()
 
             root.title("Repair Installation")
-            root.geometry("500x500")
+            root.geometry("550x550")
             root.resizable(False, False)
-            root.configure(pady=20)
+            root.configure(pady=20, padx=20)
 
             label = Label(root, text="Repair BitBuild🛠️", font=("SF Pro Display", 20, "bold"), pady=20)
             label.pack()
+
+            desc = Label(root, text="This will automatically repair bitbuild for you.If an installation error \nwas encountered It would re-install the program from the internet.", 
+                        font=("SF Pro Display", 10), 
+                        fg="#a9a9a9", 
+                        pady=20)
+            desc.pack()
+
+            report_bugs = Label(root, text="Report bugs at: https://github.com/Bit-Build/bitbuild/issues/new", 
+                        font=("SF Pro Display", 10), 
+                        fg="#030303", 
+                        pady=20)
+            report_bugs.pack(side="bottom")
 
             status = Label(root, text="Repairing", font=("SF Pro Display", 14))
 
@@ -104,7 +116,7 @@ class InstallerWindow:
 
             button_repair = button(root, text="Repair", width=20, command=repair_event)
             button_repair.pack(side="bottom")
-            
+
             # Destroy main app after loading the new window content
             app.destroy()
         
@@ -120,13 +132,13 @@ class InstallerWindow:
             "SF Pro Display", 12), bg="#c4c4c4", border=0, padx=10, command=openContinueWindow)
         continue_btn.place(x=50, y=500)
 
-        reset_button = Button(app, text="Reset settings", font=(
+        reset_button = Button(app, text="Repair", font=(
             "SF Pro Display", 12), bg="#166edc", padx=20, border=0, fg="#fff", command=openRepairWindow)
         reset_button.place(x=145, y=500)
 
         uninstall_button = Button(app, text="Uninstall", font=(
             "SF Pro Display", 12), bg="#FF0000", padx=20, border=0, fg="#fff", command=self.uninstall_func)
-        uninstall_button.place(x=340, y=500)
+        uninstall_button.place(x=270, y=500)
 
         app.configure(pady=20)
         app.resizable(False, False)
