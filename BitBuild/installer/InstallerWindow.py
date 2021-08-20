@@ -108,7 +108,6 @@ class InstallerWindow:
             # Destroy main app after loading the new window content
             app.destroy()
         
-
         main_message = Label(app, text="Setup for BitBuild", font=(
             "SF Pro Display", 24, "bold"), pady=10, padx=30)
         main_message.grid(row=0, column=0)
@@ -117,18 +116,18 @@ class InstallerWindow:
             "SF Pro Display", 12), pady=10, padx=30)
         main_desc.grid(row=1, column=0)
 
-        continue_btn = Button(app, text="Continue", font=(
-            "SF Pro Display", 12), bg="#c4c4c4", border=0, padx=10, pady=7, command=openContinueWindow)
+        continue_btn = Button(app, text="Install", font=(
+            "SF Pro Display", 12), bg="#c4c4c4", border=0, padx=10, command=openContinueWindow)
         continue_btn.place(x=50, y=500)
 
         reset_button = Button(app, text="Reset settings", font=(
-            "SF Pro Display", 12), bg="#166edc", padx=20, pady=7, border=0, fg="#fff", command=openRepairWindow)
-        reset_button.place(x=180, y=500)
+            "SF Pro Display", 12), bg="#166edc", padx=20, border=0, fg="#fff", command=openRepairWindow)
+        reset_button.place(x=145, y=500)
 
         uninstall_button = Button(app, text="Uninstall", font=(
-            "SF Pro Display", 12), bg="#FF0000", padx=20, pady=7, border=0, fg="#fff", command=self.uninstall_func)
-        uninstall_button.place(x=380, y=500)
+            "SF Pro Display", 12), bg="#FF0000", padx=20, border=0, fg="#fff", command=self.uninstall_func)
+        uninstall_button.place(x=340, y=500)
 
+        app.configure(pady=20)
         app.resizable(False, False)
-
         app.mainloop()
