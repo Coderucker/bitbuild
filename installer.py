@@ -1,3 +1,5 @@
+__author__ = "Haneen Mahdin"
+
 from BitBuild.installer.InstallerWindow import InstallerWindow
 from BitBuild.installer.installation import installation
 from BitBuild.installer.utils.repair import repair

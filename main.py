@@ -1,3 +1,5 @@
+__author__ = "Haneen Mahdin"
+
 import sys
 
 from BitBuild.main import (DirectoryWatcher, FileWatcher, DirectoryWatcherTest, FileWatcherTest)# Imports Include test files too
