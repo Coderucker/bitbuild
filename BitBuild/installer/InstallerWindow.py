@@ -32,6 +32,7 @@ class InstallerWindow:
         app = Tk()
         app.title("BitBuild Setup")
         app.geometry("600x600")
+        app.iconphoto(False, PhotoImage(file='./resources/bit-build-icon.png'))
 
         def read_license() -> str:
             license = open("LICENSE").read(1000)
