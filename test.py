@@ -1,4 +1,4 @@
-from main import (FileWatcher, DirWatcherTests, FileWatcherTests)
+from main import (DirectoryWatcherTest, FileWatcherTest)
 
 def dele():
     exec("""
@@ -15,22 +15,13 @@ def mode():
 print("Modified")
     """)
 
-
-watcher = FileWatcher([
-    "./current_task",
-    adde,
-    "node -v"
-])
-
-#watcher.watch(3)
-
-DirWatcherTests([
+DirectoryWatcherTest([
     "./",
     adde,
     mode
 ]).watch()
 
-FileWatcherTests([
+FileWatcherTest([
     "./current_task",
     adde,
     "node -v"

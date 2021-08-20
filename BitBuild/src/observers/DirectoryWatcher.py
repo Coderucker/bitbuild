@@ -1,8 +1,9 @@
+# Importing exit() function from sys module to avoid TypeError in the executable build by Pyinstaller 
 from sys import exit
 
 import time
 from datetime import datetime
-from typing import Callable, Union
+from typing import Union
 from subprocess import check_output
 
 from BitBuild.colormania.colormania import useColor
@@ -27,7 +28,7 @@ class DirectoryWatcher:
         blue = "200"
 
         # Function to call Callables
-        def caller(callback: Callable):
+        def caller(callback):
             if type(callback) == str:
                 print(check_output(callback.split(" ")).decode("utf-8"))
             else:

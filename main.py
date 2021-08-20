@@ -1,8 +1,9 @@
+__author__ = "Haneen Mahdin"
+
 import sys
 
-from BitBuild.main import (DirectoryWatcher, FileWatcher, DirWatcherTests, FileWatcherTests)# Imports Include test files too
+from BitBuild.main import (DirectoryWatcher, FileWatcher, DirectoryWatcherTest, FileWatcherTest)# Imports Include test files too
 from BitBuild.src.read_config import read_config
-from BitBuild.installer.installer import installation
 
 sys_args = sys.argv.copy()
 
@@ -36,8 +37,6 @@ def main():
     except AttributeError:
         print("Error: Config not found :(")
 
-if __name__ == "__main__":
-    #main()
-    installation()
 
-# curl -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/swudots/swudo/releases/latest
+if __name__ == "__main__":
+    main()
