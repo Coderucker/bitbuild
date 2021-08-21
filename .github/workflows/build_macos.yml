@@ -27,19 +27,12 @@ jobs:
     - name: Build Code using pyinstaller
       run: |
           pyinstaller --onefile main.py
-          pyinstaller --onefile --windowed installer.py
           mv dist/main dist/bitbuild
 
     - uses: actions/upload-artifact@v2
       with:
         name: build-artifinstalleract-macos
         path: dist/bitbuild
-        if-no-files-found: error
-    
-    - uses: actions/upload-artifact@v2
-      with:
-        name: build-artifiact-installer-macos
-        path: dist/installer
         if-no-files-found: error
     - name: Display File Tree
       run: ls -R

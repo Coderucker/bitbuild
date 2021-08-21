@@ -27,17 +27,11 @@ jobs:
     - name: Build Code using pyinstaller
       run: |
           pyinstaller --onefile main.py
-          pyinstaller --onefile --windowed installer.py
           move dist/main.exe dist/bitbuild.exe
     - uses: actions/upload-artifact@v2
       with:
         name: build-artifact-win32
         path: dist/bitbuild.exe
-        if-no-files-found: error
-    - uses: actions/upload-artifact@v2
-      with:
-        name: build-artifact-installer-windows
-        path: dist/installer.exe
         if-no-files-found: error
     - name: Display File Tree
       run: ls -R
