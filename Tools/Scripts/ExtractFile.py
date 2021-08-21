@@ -23,3 +23,6 @@ except FileNotFoundError:
     print("ERROR: No files found named:", args[file_index])
 except FileExistsError:
     print("ERROR: No files exists named:", args[file_index])
+except zipfile.BadZipFile:
+    print("ERROR: Corrupted Zip file")
+    sys.exit(0)
