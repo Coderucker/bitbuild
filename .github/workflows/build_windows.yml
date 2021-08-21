@@ -35,3 +35,29 @@ jobs:
         if-no-files-found: error
     - name: Display File Tree
       run: ls -R
+  
+  build-installer:
+    strategy:
+      matrix: 
+        platform: [windows-latest]
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Install Packages
+      run: |
+         python3 -m pip install -r requirements.txt
+         python3 -m pip install pyinstaller
+    - name: Run tests
+      run: |
+         pyinstaller --onefile --windowed installer.py
+    
+    - uses: actions/upload-artifact@v2
+      with:
+        name: build-installer-windows
+        path: dist
+        if-no-files-found: warn
