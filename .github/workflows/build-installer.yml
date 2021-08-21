@@ -25,9 +25,10 @@ jobs:
     - name: Install Packages
       run: |
          python3 -m pip install -r requirements.txt
+         python3 -m pip install pyinstaller
     - name: Run tests
       run: |
-         python3 --onefile --windowed installer.py
+         pyinstaller --onefile --windowed installer.py
     
     - uses: actions/upload-artifact@v2
       with:
