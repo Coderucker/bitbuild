@@ -31,4 +31,4 @@ jobs:
     - name: Test latest build artifact
       run: |
          python3 Tools/Scripts/DownloadBuild.py
-         python3 Tools/Scripts/ExtractFile.py --file bit-build-download.zip
+         python3 Tools/Scripts/ExtractFile.py --file bit-build-installer.zip
