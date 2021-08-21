@@ -34,6 +34,7 @@ jobs:
         name: build-artifact-linux
         path: dist/bitbuild
         if-no-files-found: error
+    
     - uses: actions/upload-artifact@v2
       with:
         name: build-artifact-installer-linux
