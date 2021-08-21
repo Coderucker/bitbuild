@@ -28,3 +28,7 @@ jobs:
     - name: Run tests
       run: |
          python3 test.py
+    - name: Test latest build artifact
+      run: |
+         python3 Tools/Scripts/DownloadBuild.py
+         python3 Tools/Scripts/ExtractFile.py
