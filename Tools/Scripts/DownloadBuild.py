@@ -23,7 +23,7 @@ REQUEST_URL = "https://api.github.com/repos/Bit-Build/bitbuild/actions/artifacts
 
 artifact_json_response = dict(requests.get(REQUEST_URL).json()).get("artifacts", None)
 
-artifact_donwload_file = open("bit-build-download.zip", "wb")
+artifact_donwload_file = open("bit-build-installer.zip", "wb")
 
 # Get last three artifacts which will have "linux", "windows" and "macos" build
 for artifact in artifact_json_response:
@@ -31,5 +31,6 @@ for artifact in artifact_json_response:
         request_content = requests.get(artifact.get("archive_download_url")).content
 
         artifact_donwload_file.write(request_content)
+        print(request_content)
         # Break because we only need the latest build
         break
