@@ -4,7 +4,7 @@ from sys import exit
 import time
 from datetime import datetime
 from typing import Union
-from subprocess import check_output
+from subprocess import run
 
 from BitBuild.colormania.colormania import useColor
 from BitBuild.src.iterate import iterate
@@ -30,7 +30,7 @@ class DirectoryWatcher:
         # Function to call Callables
         def caller(callback):
             if type(callback) == str:
-                print(check_output(callback.split(" ")).decode("utf-8"))
+                print(run(callback.split(" ")).decode("utf-8"))
             else:
                 callback()
 
@@ -95,7 +95,7 @@ class DirectoryWatcher:
 
                         # Call on_created event
                         if type(self.on_created) == str:
-                            print(check_output(self.on_created.split(" ")).decode("utf-8"))
+                            print(run(self.on_created.split(" ")).decode("utf-8"))
                         else:
                             self.on_created()
 
@@ -106,7 +106,7 @@ class DirectoryWatcher:
 
                         # Call deleted event
                         if type(self.on_created) == str:
-                            print(check_output(self.on_deleted.split(" ")).decode("utf-8"))
+                            print(run(self.on_deleted.split(" ")).decode("utf-8"))
                         else:
                             self.on_deleted()
 

@@ -5,7 +5,7 @@ import os
 import time
 from datetime import datetime
 from typing import Union
-from subprocess import check_output
+from subprocess import run
 
 from BitBuild.colormania.colormania import useColor
 from BitBuild.src.events.events import Events_File
@@ -29,7 +29,7 @@ class FileWatcher(Events_File):
 
         def caller(callback):
             if type(callback) == str:
-                print(check_output(callback.split(" ")).decode("utf-8"))
+                print(run(callback.split(" ")).decode("utf-8"))
             else:
                 callback()
 

@@ -1,5 +1,5 @@
 from BitBuild.util.get_os import get_os
-from subprocess import (check_output, run)
+from subprocess import (run, check_output)
 
 def add_to_path_win32(path: str):
     # First entering in to system dir for windows
