@@ -1,4 +1,8 @@
-# BitBuild <img src="https://github.com/Bit-Build/bitbuild/blob/main/Resources/bit-build-icon.png" height="35px" />
+# BitBuild
+<img src="https://github.com/Bit-Build/bitbuild/blob/main/Resources/bit-build-icon.png"/>
+<div style="margin: 20px;" align="center">
+  <a href="https://bitbuild.netlify.app">Website</a>
+<div/>
 
 [![Build application](https://github.com/Bit-Build/bitbuild/actions/workflows/build_windows.yml/badge.svg)](https://github.com/Bit-Build/bitbuild/actions/workflows/build_windows.yml) [![Build application](https://github.com/Bit-Build/bitbuild/actions/workflows/build_linux.yml/badge.svg)](https://github.com/Bit-Build/bitbuild/actions/workflows/build_linux.yml) [![Build application](https://github.com/Bit-Build/bitbuild/actions/workflows/build_macos.yml/badge.svg)](https://github.com/Bit-Build/bitbuild/actions/workflows/build_macos.yml) [![Python application](https://github.com/Bit-Build/bitbuild/actions/workflows/test-app.yml/badge.svg)](https://github.com/Bit-Build/bitbuild/actions/workflows/python-app.yml) 
 
