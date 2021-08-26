@@ -1,7 +1,7 @@
 # BitBuild
 <img src="https://github.com/Bit-Build/bitbuild/blob/main/Resources/bit-build-icon.png"/>
 <div style="margin: 20px;" align="center">
-  <a href="https://bitbuild.netlify.app">Website🌐</a> || <a href="https://github.com/Bit-Build">Github🐈</a> || <a href="https://github.com/haneenmahd">Developer👨‍💻</a>
+  <a href="https://bitbuild.netlify.app">Website 🌐</a> || <a href="https://github.com/Bit-Build">Github 🐈</a> || <a href="https://github.com/haneenmahd">Developer 👨‍💻</a>
 <div/>
 <br>
 
